@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- TODO 04. We make a group of checkable items. There will only be a single checked item in
+                 this group-->
+    <!-- TODO 05. We can create submenus inside the menu -->
+</menu>

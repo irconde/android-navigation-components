@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TODO 01. We move layout contents to other layout file: activity_main_content -->
+<!-- TODO 02. We create a new layout hierarchy.-->
+<!-- TODO 02.01. As new root element we'll have a LinearLayout with a Toolbar and a DrawerLayout as children-->
+<!-- TODO 02.02. As children of the DrawerLayout we'll include the layout with the contents and also a NavigationView -->
+
+<!-- TODO 03. We need to define a new menu with the items that we will provide through the drawer: drawer_menu -->
+<!-- TODO 06. We need to define a specific layout for the navigation drawer header: nav_header_main -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:background="#FFFFFF"
+    >
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelVisibilityMode="selected"
+        app:itemHorizontalTranslationEnabled="true"
+        app:menu="@menu/bottom_menu"/>
+</LinearLayout>
