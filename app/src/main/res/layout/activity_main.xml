@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:background="#FFFFFF"
+    >
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+    <!-- TODO 01. We add a BottomNavigationView to the layout of the activity -->
+    <!-- TODO 02. Create a menu resource with up to 5 navigation targets
+                  (BottomNavigationView does not support more than 5 items). -->
+
+    <!-- TODO 04. We plug the menu in the BottomNavigationView -->
+    <!-- TODO 11. We can modify the visibility of the label in menu items. For example, just show the label when the item is selected -->
+    <!-- TODO 12. We can even set whether or not navigation items should “shift” when selected/deselected. -->
+</LinearLayout>

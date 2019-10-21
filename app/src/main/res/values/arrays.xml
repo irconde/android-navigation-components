@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="images">
+        <item>@drawable/screen_01</item>
+        <item>@drawable/screen_02</item>
+        <item>@drawable/screen_03</item>
+    </integer-array>
+    <string-array name="tabs">
+        <item>@string/place_order_tab</item>
+        <item>@string/edit_contact_tab</item>
+        <item>@string/place_order_tab</item>
+        <item>@string/edit_contact_tab</item>
+    </string-array>
+    <integer-array name="icons">
+        <item>@drawable/ic_phone_black_24dp</item>
+        <item>@drawable/ic_perm_identity_black_24dp</item>
+        <item>@drawable/ic_place_black_24dp</item>
+        <item>@drawable/ic_public_black_24dp</item>
+    </integer-array>
+</resources>
