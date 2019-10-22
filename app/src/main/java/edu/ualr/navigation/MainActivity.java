@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         @NonNull
         @Override
         public Fragment createFragment(int position) {
-            return new ScreenSlidePagerFragment();
+            return ScreenSlidePagerFragment.newInstance(position);
         }
 
         @Override
