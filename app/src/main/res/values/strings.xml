@@ -1,4 +1,26 @@
 <resources>
     <string name="app_name">Navigation</string>
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="first_name_hint">First name</string>
+    <string name="last_name_hint">Last name</string>
+    <string name="email_hint">Email</string>
+    <string name="address_hint">Address</string>
+    <string name="website_hint">Website</string>
+    <string name="save_button_label">save contact</string>
+    <string name="call_button_label">Call</string>
+    <string name="text_button_label">Text</string>
+    <string name="email_button_label">Email</string>
+    <string name="directions_button_label">Map</string>
+    <string name="web_button_label">Web</string>
+    <string name="square_shape">Square</string>
+    <string name="round_shape">Round</string>
+    <string name="pepperoni_ingredient">Pepperoni</string>
+    <string name="mushroom_ingredient">Mushrooms</string>
+    <string name="veggies_ingredient">Veggies</string>
+    <string name="anchovies_ingredient">Anchovies</string>
+    <string name="cheese_option">Cheese</string>
+    <string name="double_cheese_option">2x Cheese</string>
+    <string name="no_cheese_option">No Cheese</string>
+    <string name="name_hint">Name</string>
+    <string name="phone_hint">Phone</string>
+    <string name="place_order">place order</string>
 </resources>

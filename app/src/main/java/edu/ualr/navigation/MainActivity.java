@@ -9,19 +9,18 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
-// TODO 02. Create the layout file that we'll later use for the content of the fragment: fragment_screen_slide_page.xml
-// TODO 03. Create the fragment shown as page: ScreenSlidePageFragment
+// TODO 01. We have to create the Fragment classes that we are going to use to instantiate from the activity
+// FormFragment and PizzaOrderFragment
+// TODO 02. Define the corresponding layout files
+
 public class MainActivity extends AppCompatActivity {
 
-    private static final int NUM_PAGES = 5;
+    private static final int NUM_PAGES = 2;
 
-    // TODO 04. Define a ViewPager2 member.
-    /**
-     * The pager widget, which handles animation and allows swiping horizontally to access previous
-     * and next wizard steps.
-     */
+    private static final int PIZZA_FRAGMENT_IDX = 0;
+    private static final int CONTACT_FRAGMENT_IDX = 1;
+
     private ViewPager2 viewPager;
-    //TODO 5. Define a FragmentStateAdapter member
     private FragmentStateAdapter pageAdapter;
 
 
@@ -29,15 +28,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // TODO 08. Instantiate a ViewPager2 and a PageAdapter
         viewPager = findViewById(R.id.pager);
         pageAdapter = new ScreenSlidePagerAdapter(this);
         viewPager.setAdapter(pageAdapter);
     }
-    // TODO 06. Create a class that extends the FragmentStateAdapter abstract class
-    // TODO 07. In the FragmentStateAdapter child class implement
-    //  the createFragment() method to supply instances of the ScreenSlidePageFragment as new pages
-    //  the getItemCount() method that returns the number of pages the adapter will create.
 
     private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
 
@@ -45,10 +39,18 @@ public class MainActivity extends AppCompatActivity {
             super(fragmentActivity);
         }
 
+        // TODO 03. We instantiate the proper Fragment class based on the current position of the View pager
         @NonNull
         @Override
         public Fragment createFragment(int position) {
-            return ScreenSlidePagerFragment.newInstance(position);
+            switch (position) {
+                case PIZZA_FRAGMENT_IDX:
+                    return new PizzaOrderFragment();
+                case CONTACT_FRAGMENT_IDX:
+                    return new FormFragment();
+                    default:
+                        return null;
+            }
         }
 
         @Override
