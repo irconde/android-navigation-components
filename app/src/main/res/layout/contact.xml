@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="16dp"
+        tools:context=".ContactActivity">
+
+        <ImageView
+            android:id="@+id/contactPhotoIV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGray"
+            android:minHeight="256dp"
+            android:src="@drawable/ic_perm_identity_black_24dp"
+            android:tint="@color/colorDarkGray"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fullNameTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@+id/contactPhotoIV" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLightGray"
+            app:layout_constraintTop_toBottomOf="@+id/fullNameTV" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lef_guideline_72"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="63dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="30dp" />
+
+        <TextView
+            android:id="@+id/phoneNumberTV"
+            style="@style/AppTheme.TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorDarkGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/lef_guideline_72"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <View
+            android:id="@+id/divider3"
+            style="@style/AppTheme.HorizontalDivider"
+            app:layout_constraintLeft_toLeftOf="@+id/lef_guideline_72"
+            app:layout_constraintTop_toBottomOf="@+id/phoneNumberTV" />
+
+        <TextView
+            android:id="@+id/emailTV"
+            style="@style/AppTheme.TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorDarkGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/lef_guideline_72"
+            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+        <View
+            android:id="@+id/divider4"
+            style="@style/AppTheme.HorizontalDivider"
+            app:layout_constraintLeft_toLeftOf="@+id/lef_guideline_72"
+            app:layout_constraintTop_toBottomOf="@+id/emailTV" />
+
+        <TextView
+            android:id="@+id/addressTV"
+            style="@style/AppTheme.TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingEnd="12dp"
+            android:textColor="@color/colorDarkGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/lef_guideline_72"
+            app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+        <View
+            android:id="@+id/divider5"
+            style="@style/AppTheme.HorizontalDivider"
+            app:layout_constraintLeft_toLeftOf="@+id/lef_guideline_72"
+            app:layout_constraintTop_toBottomOf="@+id/addressTV" />
+
+        <TextView
+            android:id="@+id/webTV"
+            style="@style/AppTheme.TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingEnd="12dp"
+            android:textColor="@color/colorDarkGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/lef_guideline_72"
+            app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+        <ImageView
+            android:id="@+id/phoneIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_phone_black_24dp"
+            android:tint="@color/colorDarkGray"
+            app:layout_constraintBottom_toBottomOf="@+id/phoneNumberTV"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/phoneNumberTV" />
+
+        <ImageView
+            android:id="@+id/emailIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_email_black_24dp"
+            android:tint="@color/colorDarkGray"
+            app:layout_constraintBottom_toBottomOf="@+id/emailTV"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/emailTV" />
+
+        <ImageView
+            android:id="@+id/addressIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_place_black_24dp"
+            android:tint="@color/colorDarkGray"
+            app:layout_constraintBottom_toBottomOf="@+id/addressTV"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/addressTV" />
+
+        <ImageView
+            android:id="@+id/webIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_public_black_24dp"
+            android:tint="@color/colorDarkGray"
+            app:layout_constraintBottom_toBottomOf="@+id/webTV"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/webTV" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
