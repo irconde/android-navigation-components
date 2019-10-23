@@ -6,5 +6,7 @@
     <color name="colorLightGray">#DDD</color>
     <color name="colorDarkGray">#5F6267</color>
     <color name="colorBlue">#1D73E4</color>
+    <color name="colorBlueDark">#0E4B9B</color>
+    <color name="colorBlueLight">#66A8FF</color>
     <color name="colorGreen">#40DC85</color>
 </resources>

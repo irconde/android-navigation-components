@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- TODO 04. We make a group of checkable items. There will only be a single checked item in
+                 this group-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/place_order"
+            android:icon="@drawable/ic_phone_black_24dp"
+            android:title="@string/place_order_tab"
+            app:tooltipText="@string/place_order_tooltip" />
+        <item
+            android:id="@+id/edit_contact"
+            android:icon="@drawable/ic_perm_identity_black_24dp"
+            android:title="@string/edit_contact_tab" />
+    </group>
+    <!-- TODO 05. We can create submenus inside the menu -->
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share_black_24dp"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_send_black_24dp"
+                android:title="Send" />
+        </menu>
+    </item>
+</menu>

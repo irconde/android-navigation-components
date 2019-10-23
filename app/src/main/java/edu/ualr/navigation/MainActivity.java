@@ -1,7 +1,11 @@
 package edu.ualr.navigation;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -9,11 +13,10 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager2 viewPager;
     private FragmentStateAdapter pageAdapter;
     private BottomNavigationView bottomNavigationView;
+    private NavigationView navigationView;
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         pageAdapter = new ScreenSlidePagerAdapter(this);
         viewPager.setAdapter(pageAdapter);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -56,8 +63,49 @@ public class MainActivity extends AppCompatActivity {
                 super.onPageSelected(position);
                 MenuItem selectedItem = bottomNavigationView.getMenu().getItem(position);
                 bottomNavigationView.setSelectedItemId(selectedItem.getItemId());
+                // TODO 08. We'll update the selected item in the drawer when new page is selected
+                navigationView.setCheckedItem(selectedItem.getItemId());
             }
         });
+
+        // TODO 07. We need to handle menu item clicks
+        // TODO 07.01 We get a reference to the NavigationView and also to the DrawerLayout
+        // TODO 07.02. We bind to the NavigationView a OnNavigationItemSelectedListener
+        // TODO 07.03. We'll update the current shown page based on the item selected
+        navigationView = findViewById(R.id.nav_view);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                item.setChecked(true);
+                switch (item.getItemId()) {
+                    case R.id.place_order:
+                        onPlaceOrderTapped();
+                        return true;
+                    case R.id.edit_contact:
+                        onEditContactTapped();
+                        return true;
+                        default:
+                            return false;
+                }
+            }
+        });
+
+        // TODO 09. We want to provide the hamburger icon in the toolbar to open the navigation drawer
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+    }
+
+    private void onPlaceOrderTapped() {
+        bottomNavigationView.setSelectedItemId(R.id.place_order);
+        drawerLayout.closeDrawer(GravityCompat.START);
+    }
+
+    private void onEditContactTapped() {
+        bottomNavigationView.setSelectedItemId(R.id.edit_contact);
+        drawerLayout.closeDrawer(GravityCompat.START);
     }
 
     private void incrementBadgeValue() {
