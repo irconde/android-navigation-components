@@ -25,4 +25,5 @@
     <string name="place_order">place order</string>
     <string name="place_order_tab">place order</string>
     <string name="edit_contact_tab">edit contact</string>
+    <string name="place_order_tooltip">Customize your own pizza</string>
 </resources>

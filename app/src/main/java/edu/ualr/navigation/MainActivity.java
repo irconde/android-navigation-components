@@ -7,73 +7,73 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.badge.BadgeDrawable;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
 
-// TODO 05. Add more tabs to the activity so we can see the behavior of the scrollable TabLayout
+public class MainActivity extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity implements PizzaOrderFragment.OnPlaceOrderListener {
-
-    private static final int NUM_PAGES = 4;
+    private static final int NUM_PAGES = 2;
 
     private static final int PIZZA_FRAGMENT_IDX = 0;
     private static final int CONTACT_FRAGMENT_IDX = 1;
-    private static final int PIZZA_FRAGMENT_COPY_IDX = 2;
-    private static final int CONTACT_FRAGMENT_COPY_IDX = 3;
 
     private ViewPager2 viewPager;
     private FragmentStateAdapter pageAdapter;
-    private TabLayout tabLayout;
+    // TODO 05. We store a reference to our new BottomNavigationView
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewPager = findViewById(R.id.pager);
-        tabLayout = findViewById(R.id.tabs);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
         pageAdapter = new ScreenSlidePagerAdapter(this);
         viewPager.setAdapter(pageAdapter);
-        new TabLayoutMediator(tabLayout, viewPager,
-                new TabLayoutMediator.TabConfigurationStrategy() {
-                    @Override public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-                       onTabNameSet(tab, position);
-                       onTabIconSet(tab, position);
-                    }
-                }).attach();
+        // TODO 06. Make sure we have already created a view pager
+        // TODO 07. Create and add a OnNavigationItemSelectedListener to the BottomNavigationView
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                // TODO 08. We'll have to set the current page of the view pager based on the
+                //  id of the currently selected menu item in the BottomNavigationView
+                switch (item.getItemId()) {
+                    case R.id.place_order:
+                        viewPager.setCurrentItem(PIZZA_FRAGMENT_IDX);
+                        // TODO 10. We can associate a badge with a menu item
+                        incrementBadgeValue();
+                        return true;
+                    case R.id.edit_contact:
+                        viewPager.setCurrentItem(CONTACT_FRAGMENT_IDX, true);
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
+        // TODO 09. We'll have to register a new OnPageChangeCallback to set the corresponding tab
+        //  whenever the user makes a swipe gesture and changes the current selected page.
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                // TODO 09.01. We get the MenuItem in the given position
+                MenuItem selectedItem = bottomNavigationView.getMenu().getItem(position);
+                // TODO 09.02. We set the selected item id of the bottom navigation menu
+                bottomNavigationView.setSelectedItemId(selectedItem.getItemId());
+            }
+        });
     }
 
-    // TODO 07. We create a new method that adds an icon to each tab -->
-    private void onTabIconSet (TabLayout.Tab tab, int position) {
-        TypedArray icons = getResources().obtainTypedArray(R.array.icons);
-        int iconId = icons.getResourceId(position, -1);
-        if (iconId != -1) {
-            tab.setIcon(iconId);
-        }
-    }
-
-    // TODO 08. Create and add a badge to a tab
-    private void incrementBadgeCounter(TabLayout.Tab tab) {
-        // TODO 09. Create and initialize an instance of BadgeDrawable.
-        // Subsequent calls to this method will reuse the existing BadgeDrawable
-        BadgeDrawable badge = tab.getOrCreateBadge();
-        badge.setVisible(true);
-        // TODO 10. Show a number in the badge
+    // TODO 10. We can associate a badge with a menu item and modify the number within
+    private void incrementBadgeValue() {
+        BadgeDrawable badge = bottomNavigationView.getOrCreateBadge(R.id.place_order);
         badge.setNumber(badge.getNumber() + 1);
-    }
-
-    private void onTabNameSet(TabLayout.Tab tab, int position) {
-        String[] tabLabels = getResources().getStringArray(R.array.tabs);
-        tab.setText(tabLabels[position]);
-    }
-
-    // TODO 14. We implement the interface methods
-    @Override
-    public void onPlaceOrderButtonClicked() {
-        incrementBadgeCounter(tabLayout.getTabAt(0));
     }
 
     private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
@@ -90,12 +90,8 @@ public class MainActivity extends AppCompatActivity implements PizzaOrderFragmen
                     return new PizzaOrderFragment();
                 case CONTACT_FRAGMENT_IDX:
                     return new FormFragment();
-                case PIZZA_FRAGMENT_COPY_IDX:
-                    return new PizzaOrderFragment();
-                case CONTACT_FRAGMENT_COPY_IDX:
-                    return new FormFragment();
-                    default:
-                        return null;
+                default:
+                    return null;
             }
         }
 
