@@ -9,10 +9,6 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
-// TODO 01. We have to create the Fragment classes that we are going to use to instantiate from the activity
-// FormFragment and PizzaOrderFragment
-// TODO 02. Define the corresponding layout files
-
 public class MainActivity extends AppCompatActivity {
 
     private static final int NUM_PAGES = 2;
@@ -39,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
             super(fragmentActivity);
         }
 
-        // TODO 03. We instantiate the proper Fragment class based on the current position of the View pager
         @NonNull
         @Override
         public Fragment createFragment(int position) {
