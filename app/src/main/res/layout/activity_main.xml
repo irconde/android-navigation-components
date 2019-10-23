@@ -12,9 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
-    <!-- TODO 01. We add a BottomNavigationView to the layout of the activity -->
-    <!-- TODO 02. Create a menu resource with up to 5 navigation targets
-                  (BottomNavigationView does not support more than 5 items). -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
@@ -22,7 +19,4 @@
         app:labelVisibilityMode="selected"
         app:itemHorizontalTranslationEnabled="true"
         app:menu="@menu/bottom_menu"/>
-    <!-- TODO 04. We plug the menu in the BottomNavigationView -->
-    <!-- TODO 11. We can modify the visibility of the label in menu items. For example, just show the label when the item is selected -->
-    <!-- TODO 12. We can even set whether or not navigation items should “shift” when selected/deselected. -->
 </LinearLayout>
