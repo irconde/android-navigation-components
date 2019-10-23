@@ -30,14 +30,12 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/round_shape_btn"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:backgroundTint="@color/colorBlue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/round_shape"/>
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/square_shape_btn"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:backgroundTint="@color/colorBlue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/square_shape"/>

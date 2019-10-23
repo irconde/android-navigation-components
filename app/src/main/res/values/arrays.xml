@@ -5,4 +5,8 @@
         <item>@drawable/screen_02</item>
         <item>@drawable/screen_03</item>
     </integer-array>
+    <string-array name="tabs">
+        <item>@string/place_order_tab</item>
+        <item>@string/edit_contact_tab</item>
+    </string-array>
 </resources>
