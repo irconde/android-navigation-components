@@ -41,4 +41,19 @@
         <item name="android:layout_marginTop">16dp</item>
         <item name="android:layout_marginBottom">16dp</item>
     </style>
+
+    <!-- TODO 01. We define a new style for the tab layout using several specific properties -->
+    <!-- TODO 02. Use the TabLayout.Colored style as parent of the defined style in order to have
+                  tabs with coloured background -->
+    <style name="AppTheme.TabLayout" parent="Widget.MaterialComponents.TabLayout.Colored">
+        <item name="tabGravity">center</item>
+        <item name="tabIndicatorColor">@color/colorGreen</item>
+        <item name="tabIndicatorHeight">3dp</item>
+        <item name="tabTextColor">@color/colorGreen</item>
+    </style>
+
+    <!-- TODO 03. We define a new TabLayout style. We will be able to have several scrollable tabs-->
+    <style name="AppTheme.TabLayout.Scrollable" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabMode">scrollable</item>
+    </style>
 </resources>

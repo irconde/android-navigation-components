@@ -8,5 +8,14 @@
     <string-array name="tabs">
         <item>@string/place_order_tab</item>
         <item>@string/edit_contact_tab</item>
+        <item>@string/place_order_tab</item>
+        <item>@string/edit_contact_tab</item>
     </string-array>
+    <!-- TODO 06 We define a new integer-array with the drawable resources that we'll use as icons in our tabs -->
+    <integer-array name="icons">
+        <item>@drawable/ic_phone_black_24dp</item>
+        <item>@drawable/ic_perm_identity_black_24dp</item>
+        <item>@drawable/ic_place_black_24dp</item>
+        <item>@drawable/ic_public_black_24dp</item>
+    </integer-array>
 </resources>
