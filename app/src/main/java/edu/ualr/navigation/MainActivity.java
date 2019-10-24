@@ -15,12 +15,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ViewPager2 viewPager = findViewById(R.id.pager);
-        // TODO 02. We create an instance of the new Adapter class. We plug in the data set used to pupulate the pager of the view pager
+        // TODO 03. We create an instance of the new Adapter class. We plug in the data set used to populate the pager of the view pager
         SimpleAdapter pageAdapter = new SimpleAdapter(generateDummyDataset());
-        // TODO 03. We associate the adapter with the view pager
+        // TODO 04. We associate the adapter with the view pager
         viewPager.setAdapter(pageAdapter);
     }
 
+    // TODO 01. Generate the data set to be used to populate the view pager
     private List<Contact> generateDummyDataset() {
         List<Contact> contacts = new ArrayList<>();
         Contact firstContact = new Contact();
