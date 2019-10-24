@@ -13,7 +13,7 @@ import android.os.Bundle;
 // TODO 03. Create the fragment shown as page: ScreenSlidePageFragment
 public class MainActivity extends AppCompatActivity {
 
-    private static final int NUM_PAGES = 5;
+
 
     // TODO 04. Define a ViewPager2 member.
     /**
@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     //  the getItemCount() method that returns the number of pages the adapter will create.
 
     private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
+
+        private static final int NUM_PAGES = 5;
 
         public ScreenSlidePagerAdapter(@NonNull FragmentActivity fragmentActivity) {
             super(fragmentActivity);
