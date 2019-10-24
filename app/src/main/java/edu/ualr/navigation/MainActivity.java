@@ -15,8 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ViewPager2 viewPager = findViewById(R.id.pager);
-        // TODO 01. We create an Adapter that extends from RecyclerView.Adapter
+        // TODO 02. We create an instance of the new Adapter class. We plug in the data set used to pupulate the pager of the view pager
         SimpleAdapter pageAdapter = new SimpleAdapter(generateDummyDataset());
+        // TODO 03. We associate the adapter with the view pager
         viewPager.setAdapter(pageAdapter);
     }
 
