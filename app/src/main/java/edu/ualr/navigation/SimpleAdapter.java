@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by irconde on 2019-10-22.
  */
-// TODO 02. We define an Adapter class that extends from RecyclerView.Adapter
+// TODO 04. We define an Adapter class that extends from RecyclerView.Adapter
 public class SimpleAdapter extends RecyclerView.Adapter {
 
     List<Contact> mContacts;
