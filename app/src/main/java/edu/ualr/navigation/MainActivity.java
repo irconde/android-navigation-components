@@ -15,14 +15,8 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int NUM_PAGES = 2;
-
-    private static final int PIZZA_FRAGMENT_IDX = 0;
-    private static final int CONTACT_FRAGMENT_IDX = 1;
-
     private ViewPager2 viewPager;
     private FragmentStateAdapter pageAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +28,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
+
+        private static final int NUM_PAGES = 2;
+
+        private static final int PIZZA_FRAGMENT_IDX = 0;
+        private static final int CONTACT_FRAGMENT_IDX = 1;
 
         public ScreenSlidePagerAdapter(@NonNull FragmentActivity fragmentActivity) {
             super(fragmentActivity);
