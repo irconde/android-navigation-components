@@ -7,23 +7,15 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.res.TypedArray;
 import android.os.Bundle;
 
-import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 // TODO 05. Add more tabs to the activity so we can see the behavior of the scrollable TabLayout
+// TODO 14. We implement the PizzaOrderFragment.OnPlaceOrderListener interface
 
-public class MainActivity extends AppCompatActivity implements PizzaOrderFragment.OnPlaceOrderListener {
-
-    private static final int NUM_PAGES = 4;
-
-    private static final int PIZZA_FRAGMENT_IDX = 0;
-    private static final int CONTACT_FRAGMENT_IDX = 1;
-    private static final int PIZZA_FRAGMENT_COPY_IDX = 2;
-    private static final int CONTACT_FRAGMENT_COPY_IDX = 3;
+public class MainActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager;
     private FragmentStateAdapter pageAdapter;
@@ -41,42 +33,28 @@ public class MainActivity extends AppCompatActivity implements PizzaOrderFragmen
                 new TabLayoutMediator.TabConfigurationStrategy() {
                     @Override public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                        onTabNameSet(tab, position);
-                       onTabIconSet(tab, position);
+                       // TODO 07
                     }
                 }).attach();
     }
 
     // TODO 07. We create a new method that adds an icon to each tab -->
-    private void onTabIconSet (TabLayout.Tab tab, int position) {
-        TypedArray icons = getResources().obtainTypedArray(R.array.icons);
-        int iconId = icons.getResourceId(position, -1);
-        if (iconId != -1) {
-            tab.setIcon(iconId);
-        }
-    }
-
     // TODO 08. Create and add a badge to a tab
-    private void incrementBadgeCounter(TabLayout.Tab tab) {
-        // TODO 09. Create and initialize an instance of BadgeDrawable.
-        // Subsequent calls to this method will reuse the existing BadgeDrawable
-        BadgeDrawable badge = tab.getOrCreateBadge();
-        badge.setVisible(true);
-        // TODO 10. Show a number in the badge
-        badge.setNumber(badge.getNumber() + 1);
-    }
+    // TODO 09. Create and initialize an instance of BadgeDrawable.
+    // TODO 10. Show a number in the badge
 
     private void onTabNameSet(TabLayout.Tab tab, int position) {
         String[] tabLabels = getResources().getStringArray(R.array.tabs);
         tab.setText(tabLabels[position]);
     }
 
-    // TODO 14. We implement the interface methods
-    @Override
-    public void onPlaceOrderButtonClicked() {
-        incrementBadgeCounter(tabLayout.getTabAt(0));
-    }
+    // TODO 14. We implement the PizzaOrderFragment.OnPlaceOrderListener interface
 
     private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
+
+        private static final int NUM_PAGES = 2;
+        private static final int PIZZA_FRAGMENT_IDX = 0;
+        private static final int CONTACT_FRAGMENT_IDX = 1;
 
         public ScreenSlidePagerAdapter(@NonNull FragmentActivity fragmentActivity) {
             super(fragmentActivity);
@@ -89,10 +67,6 @@ public class MainActivity extends AppCompatActivity implements PizzaOrderFragmen
                 case PIZZA_FRAGMENT_IDX:
                     return new PizzaOrderFragment();
                 case CONTACT_FRAGMENT_IDX:
-                    return new FormFragment();
-                case PIZZA_FRAGMENT_COPY_IDX:
-                    return new PizzaOrderFragment();
-                case CONTACT_FRAGMENT_COPY_IDX:
                     return new FormFragment();
                     default:
                         return null;
