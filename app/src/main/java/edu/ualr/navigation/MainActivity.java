@@ -18,13 +18,6 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity implements PizzaOrderFragment.OnPlaceOrderListener {
 
-    private static final int NUM_PAGES = 4;
-
-    private static final int PIZZA_FRAGMENT_IDX = 0;
-    private static final int CONTACT_FRAGMENT_IDX = 1;
-    private static final int PIZZA_FRAGMENT_COPY_IDX = 2;
-    private static final int CONTACT_FRAGMENT_COPY_IDX = 3;
-
     private ViewPager2 viewPager;
     private FragmentStateAdapter pageAdapter;
     private TabLayout tabLayout;
@@ -78,6 +71,13 @@ public class MainActivity extends AppCompatActivity implements PizzaOrderFragmen
 
     private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
 
+        private static final int NUM_PAGES = 4;
+
+        private static final int PIZZA_FRAGMENT_IDX = 0;
+        private static final int CONTACT_FRAGMENT_IDX = 1;
+        private static final int PIZZA_FRAGMENT_COPY_IDX = 2;
+        private static final int CONTACT_FRAGMENT_COPY_IDX = 3;
+
         public ScreenSlidePagerAdapter(@NonNull FragmentActivity fragmentActivity) {
             super(fragmentActivity);
         }
@@ -87,11 +87,9 @@ public class MainActivity extends AppCompatActivity implements PizzaOrderFragmen
         public Fragment createFragment(int position) {
             switch (position) {
                 case PIZZA_FRAGMENT_IDX:
-                    return new PizzaOrderFragment();
-                case CONTACT_FRAGMENT_IDX:
-                    return new FormFragment();
                 case PIZZA_FRAGMENT_COPY_IDX:
                     return new PizzaOrderFragment();
+                case CONTACT_FRAGMENT_IDX:
                 case CONTACT_FRAGMENT_COPY_IDX:
                     return new FormFragment();
                     default:
