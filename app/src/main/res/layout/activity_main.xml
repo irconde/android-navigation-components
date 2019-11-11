@@ -6,7 +6,9 @@
 <!-- TODO 02.02. As children of the DrawerLayout we'll include the layout with the contents and also a NavigationView -->
 <!-- DrawerLayout: width and height have to be match_parent -->
 <!-- Inner layout (activity_main_content): width and height have to be match_parent -->
-<!-- NavigationView: height is usually match_parent and it's usually defined to fit the system window-->
+<!-- NavigationView:
+     height is usually match_parent and it's usually defined to fit the system window
+     define the layout gravity -->
 <!-- TODO 03. We need to define a new menu with the items that we will provide through the drawer: drawer_menu -->
 <!-- TODO 06. We need to define a specific layout for the navigation drawer header: nav_header_main -->
 

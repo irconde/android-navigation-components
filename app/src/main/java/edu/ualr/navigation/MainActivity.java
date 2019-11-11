@@ -63,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
         // TODO 07.02. We bind to the NavigationView a OnNavigationItemSelectedListener
         // TODO 07.03. We'll update the current shown page based on the item selected
         // TODO 09. We want to provide the hamburger icon in the toolbar to open the navigation drawer
+        // TODO 09.01 We have to create a new instance of the ActionBarDrawerToggle
+        // TODO 09.02. We set the ActionBarDrawerToggle as listener of the drawer layout
+        // TODO 09.03. We have to synchronize the drawer with the toolbar
     }
 
     private void incrementBadgeValue() {
