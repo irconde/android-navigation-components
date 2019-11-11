@@ -29,11 +29,10 @@ public class MainActivity extends AppCompatActivity {
         pageAdapter = new ScreenSlidePagerAdapter(this);
         viewPager.setAdapter(pageAdapter);
         // TODO 02. We create a new TabLayoutMediator to bind the viewPager to the tab layout
-        // TODO 03. Set tab labels
+        // TODO 03. Set tab labels in the Tab strategy
+        // TODO 04. Link the tab layout and the view pager. Attach TabLayoutMediator
     }
-
-    // TODO 03. Set tab labels
-
+    
     private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
 
         public ScreenSlidePagerAdapter(@NonNull FragmentActivity fragmentActivity) {
