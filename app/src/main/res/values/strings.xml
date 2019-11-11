@@ -28,4 +28,6 @@
     <string name="place_order_tooltip">Customize your own pizza</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="share_option">Share</string>
+    <string name="send_option">Send</string>
 </resources>
