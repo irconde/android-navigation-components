@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- TODO 03. We define the items used in the bottom menu-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/place_order"
+        android:icon="@drawable/ic_phone_black_24dp"
+        android:title="@string/place_order_tab"/>
+    <item android:id="@+id/edit_contact"
+        android:icon="@drawable/ic_perm_identity_black_24dp"
+        android:title="@string/edit_contact_tab"/>
+</menu>
 <!-- TODO 13. We can add a tooltip to a menu item. A tooltip will be shown above a navigation item when it is long pressed -->
