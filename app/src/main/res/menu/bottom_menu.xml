@@ -8,4 +8,4 @@
         android:icon="@drawable/ic_perm_identity_black_24dp"
         android:title="@string/edit_contact_tab"/>
 </menu>
-<!-- TODO 13. We can add a tooltip to a menu item. A tooltip will be shown above a navigation item when it is long pressed -->
+<!-- TODO 13. We can add a tooltip to a menu item using app:tooltipText. A tooltip will be shown above a navigation item when it is long pressed -->

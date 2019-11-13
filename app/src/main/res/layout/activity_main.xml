@@ -18,5 +18,5 @@
 
     <!-- TODO 04. We plug the menu in the BottomNavigationView -->
     <!-- TODO 11. We can modify the visibility of the label in menu items. For example, just show the label when the item is selected -->
-    <!-- TODO 12. We can even set whether or not navigation items should “shift” when selected/deselected. -->
+    <!-- TODO 12. We can even set whether or not navigation items should “shift” when selected/deselected by using the itemHorizontalTranslationEnabled property-->
 </LinearLayout>
